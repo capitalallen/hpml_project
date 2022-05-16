@@ -2,7 +2,8 @@
 ## Description of the project
 
 ### Background 
-Most AutoML tools follow a common 3 stage pipline (Figure 1). There is no one AutoML tool that can clearly outperform every other tool. 
+Most AutoML tools follow a common 3-stage pipline (Figure 1). There is no one AutoML tool that can clearly outperform every other tool. 
+![3-stage pipeline](/images/2.png)
 ### Challenges 
 Althrough each AutoML library is trying to solve same problem - Automate ML & DL training, they each have dramtically different APIs and ways to accomplish this goal.
 
@@ -12,6 +13,7 @@ As the result, users have to spend lots of time learning and trying different Au
 
 ### Solution
 After examing the performance of some AutoML tools on many datasets, we build this project that focuses on building a library aggregating all popular AutoML Tools and presents a uniform API layer that allows users to easily switch between different AutoML tools and save lots of time on learning each individual tool. 
+![Design](/images/1.png)
 
 ## Description of the repository and code structure
 ### Description of the repository
