@@ -7,7 +7,6 @@ Most AutoML tools follow a common 3-stage pipline (Figure 1). There is no one Au
 
 ![3-stage pipeline](/images/2.png)
 
-Most AutoML tools follow a common 3 stage pipline (Figure 1). There is no one AutoML tool that can clearly outperform every other tool. 
 ### Challenges 
 Althrough each AutoML library is trying to solve same problem - Automate ML & DL training, they each have dramtically different APIs and ways to accomplish this goal.
 
@@ -28,7 +27,7 @@ This repo includes the implemention of 3 different AutoML libraries (AutoGoal, A
 ### Code structure
 Source code is in code folder.
 
-We applied Adapter design pattern when designing the structure of the project, which allows us to allows different AutoML tools with incompatible interfaces to collaborate. and add more in the future. 
+We applied Adapter design pattern when designing the structure of the project, which allows different AutoML tools with incompatible interfaces to collaborate. and add more in the future. 
 client.py in src folder acts as the adapter wraps AutoML libraries to hide the complexity of conversion happening behind the scenes. 
 
 auto_goal, auto_h2o and auto_keras folders include the use of AutoML tools to solve various types of ML problems. 
@@ -53,22 +52,22 @@ auto_goal, auto_h2o and auto_keras folders include the use of AutoML tools to so
 ### Auto-keras for binary classification
     ```
     from src.client import Client 
-    library='auto_keras'
+    library='auto-keras'
     type='binary_classifier'
     train_path='https://s3.amazonaws.com/erin-data/higgs/higgs_train_10k.csv'
     test_path='https://s3.amazonaws.com/erin-data/higgs/higgs_test_5k.csv'
     client = Client(library)
-    client.execute(data_path,type,train_path,test_path)
+    client.execute(type=type,train_file=train_path,test_file=test_path)
     ```
 ### H2O for binary classification
     ```
     from src.client import Client 
     library='h2o'
-    label_column='response'
+    label='response'
     train_path='https://s3.amazonaws.com/erin-data/higgs/higgs_train_10k.csv'
     test_path='https://s3.amazonaws.com/erin-data/higgs/higgs_test_5k.csv'
     client = Client(library)
-    client.execute(label_column,train_path,test_path)
+    client.execute(label_column=label,train_file=train_path,test_file=test_path)
     ```
 
 ## Results and observations  
