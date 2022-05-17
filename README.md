@@ -27,7 +27,7 @@ This repo includes the implemention of 3 different AutoML libraries (AutoGoal, A
 ### Code structure
 Source code is in code folder.
 
-We applied Adapter design pattern when designing the structure of the project, which allows us to allows different AutoML tools with incompatible interfaces to collaborate. and add more in the future. 
+We applied Adapter design pattern when designing the structure of the project, which allows different AutoML tools with incompatible interfaces to collaborate. and add more in the future. 
 client.py in src folder acts as the adapter wraps AutoML libraries to hide the complexity of conversion happening behind the scenes. 
 
 auto_goal, auto_h2o and auto_keras folders include the use of AutoML tools to solve various types of ML problems. 
