@@ -7,7 +7,6 @@ Most AutoML tools follow a common 3-stage pipline (Figure 1). There is no one Au
 
 ![3-stage pipeline](/images/2.png)
 
-Most AutoML tools follow a common 3 stage pipline (Figure 1). There is no one AutoML tool that can clearly outperform every other tool. 
 ### Challenges 
 Althrough each AutoML library is trying to solve same problem - Automate ML & DL training, they each have dramtically different APIs and ways to accomplish this goal.
 
@@ -53,22 +52,22 @@ auto_goal, auto_h2o and auto_keras folders include the use of AutoML tools to so
 ### Auto-keras for binary classification
     ```
     from src.client import Client 
-    library='auto_keras'
+    library='auto-keras'
     type='binary_classifier'
     train_path='https://s3.amazonaws.com/erin-data/higgs/higgs_train_10k.csv'
     test_path='https://s3.amazonaws.com/erin-data/higgs/higgs_test_5k.csv'
     client = Client(library)
-    client.execute(data_path,type,train_path,test_path)
+    client.execute(type=type,train_file=train_path,test_file=test_path)
     ```
 ### H2O for binary classification
     ```
     from src.client import Client 
     library='h2o'
-    label_column='response'
+    label='response'
     train_path='https://s3.amazonaws.com/erin-data/higgs/higgs_train_10k.csv'
     test_path='https://s3.amazonaws.com/erin-data/higgs/higgs_test_5k.csv'
     client = Client(library)
-    client.execute(label_column,train_path,test_path)
+    client.execute(label_column=label,train_file=train_path,test_file=test_path)
     ```
 
 ## Results and observations  
