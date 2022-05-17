@@ -3,9 +3,10 @@ from h2o.automl import H2OAutoML
 class BinaryClassifier: 
     def __init__(self,train_path:str,test_path:str):
         # Import a sample binary outcome train/test set into H2O
+        h2o.init()
         self.train_data = h2o.import_file(train_path)
         self.test_data = h2o.import_file(test_path)
-    
+        
     def train(self,label_column='response',max_model=20):
         # Identify predictors and response
         x = self.train_data.columns
